@@ -21,21 +21,9 @@ namespace MenuProject.ViewModels
         [ObservableProperty]
         private Student _selectedStudent;        
         
-        private string _selectedEducationLevel = string.Empty;
-        public string SelectedEducationLevel
-        {
-            get => _selectedEducationLevel;
-            set
-            {
-                SetProperty(ref _selectedEducationLevel, value);
-                SelectedStudent.EducationLevel = _selectedEducationLevel;
-            }
-        }
-
         public StudentViewModel()
         {
             _selectedStudent = new Student();
-            SelectedEducationLevel = _educationLevelsRepo.FindFirst();
             Update();
         }
 
@@ -66,7 +54,6 @@ namespace MenuProject.ViewModels
         {
             EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll());
             Students = new ObservableCollection<Student>(_studentRepo.FindAll());
-            OnPropertyChanged(nameof(Students));
         }
     }
 }

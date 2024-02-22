@@ -7,7 +7,7 @@ namespace Kreta.Desktop.Repos
 {
     public class EducationLevelsRepo
     {
-        private List<String> _educationLevels= new() { "érettségi", "szakmai érettségi", "szakmai vizsga" };
+        private List<String> _educationLevels= new() { "érettségi", "szakképzés", "szakmai vizsga" };
         public List<string> FindAll()
         {
             return _educationLevels;
